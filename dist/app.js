@@ -1,2 +1,6 @@
 "use strict";
-console.log("Time to get started... Hiroko Yamaji");
+console.log("hiroko---yamaji");
+var button = document.querySelector("button");
+button.addEventListener("click", function () {
+    console.log("Click!!");
+});

@@ -191,9 +191,42 @@ tsc --watch
   "include": ["app.ts", "analytics.ts"]
 ```
 
-# TypeScript for JavaScript Programmers
+### 43. Strict Mode in tsconfig.js
+
+- strict mode in tsconfig.js
+
+```js
+    "strict": true /* Enable all strict type-checking options. */,
+    "noImplicitAny": true, // variable is OK but for parameters it is NOT OK
+```
+
+```js
+let result;
+
+const sendAnalytics = (data) => {
+  // ERROR!! - parameters needs to type.
+  console.log(data);
+  result = 5; // variable is OK
+};
+```
+
+```js
+    "strict": true /* Enable all strict type-checking options. */,
+    "noImplicitAny": false,
+```
+
+```js
+// Both parameter and variable are OK!
+const sendAnalytics = (data) => {
+  console.log(data);
+  result = 5;
+};
+```
+
+### TypeScript for JavaScript Programmers
 
 ## References
 
 https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 https://www.udemy.com/course/understanding-typescript/learn/lecture/16888058?start=15#overview
+https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
