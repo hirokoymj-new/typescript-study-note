@@ -1,6 +1,14 @@
 "use strict";
-console.log("hiroko---yamaji");
-var button = document.querySelector("button");
-button.addEventListener("click", function () {
-    console.log("Click!!");
-});
+class Person {
+    constructor(n) {
+        this.age = 30;
+        this.name = n;
+    }
+    greet(phrase) {
+        console.log(phrase + " " + this.name);
+    }
+}
+let user1;
+user1 = new Person("Max");
+user1.greet("Hi there - I am");
+console.log(user1);

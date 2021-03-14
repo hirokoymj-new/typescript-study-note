@@ -1,7 +1,25 @@
-console.log("hiroko---yamaji");
+interface Greetable {
+  name: string;
 
-// This is Hiroko Comment.
-const button = document.querySelector("button")!;
-button.addEventListener("click", () => {
-  console.log("Click!!");
-});
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name: string;
+  age = 30;
+
+  constructor(n: string) {
+    this.name = n;
+  }
+
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  }
+}
+
+let user1: Greetable;
+
+user1 = new Person("Max");
+
+user1.greet("Hi there - I am");
+console.log(user1);
