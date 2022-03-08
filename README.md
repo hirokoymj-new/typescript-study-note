@@ -13,6 +13,9 @@ let f: any[] = [1, true, "a"];
 
 ## Enum
 
+- Enums allow a developer to define a set of named constants.
+- [Enum](https://www.typescriptlang.org/docs/handbook/enums.html)
+
 ```js
 enum Color {
   Red = 0,
@@ -71,6 +74,26 @@ let x = "hello" as const;
 let y = [10, 20] as const;
 // Type '{ readonly text: "hello" }'
 let z = { text: "hello" } as const;
+```
+
+## Union Types
+
+- A union type is a type formed from two or more other types, representing values that may be any one of those types.
+- [Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)
+
+```js
+type MyBool = true | false;
+type ID = number | string;
+
+function printId(id: number | string) {
+  console.log("Your ID is: " + id);
+}
+// OK
+printId(101);
+// OK
+printId("202");
+// Error
+printId({ myID: 22342 });
 ```
 
 ## React - useState
