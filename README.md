@@ -59,6 +59,18 @@ const mappedData = (): IChartMappedData => {
 };
 ```
 
+## const
+
+- you must not specify any type annotation on the const, and let the compiler infer the type of the constants
+- [stackoverflow: How to define string literal union type from constants in Typescript](https://stackoverflow.com/questions/56263200/how-to-define-string-literal-union-type-from-constants-in-typescript)
+
+```js
+const myCity = "Los Angeles";
+const myNumber = 1;
+console.log(typeof myNumber); // number
+console.log(typeof myCity); // string
+```
+
 ## const assertions
 
 - They're constants. They cannot be changed after they've been declared.
