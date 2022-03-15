@@ -144,7 +144,7 @@ const handleChange = (
 
 ## ReturnType<Type>
 
-- [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#returntypetype)
+- [Utility Types: ReturnType](https://www.typescriptlang.org/docs/handbook/utility-types.html#returntypetype)
 - ReturnType constructs a type of the return type of the function Type:
 
 **Example 1**
@@ -194,4 +194,32 @@ const rootReducer = combineReducers({
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
+```
+
+## Pick<Type>
+
+- [Utility Types: Pick](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
+- Constructs a type by picking the set of properties Keys from Type.
+
+**Example 1**
+
+```js
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+type TodoPreview = Pick<Todo, "title" | "completed">;
+
+const todo: TodoPreview = {
+  title: "Clean room",
+  completed: false,
+};
+```
+
+**Example 2**
+
+```js
+export type ICategoryFormData = Pick<ICategory, "name" | "abbr">;
 ```
