@@ -196,7 +196,7 @@ const rootReducer = combineReducers({
 export type RootState = ReturnType<typeof rootReducer>;
 ```
 
-## Pick<Type>
+## Pick<Type, Keys>
 
 - [Utility Types: Pick](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
 - Constructs a type by picking the set of properties Keys from Type.
