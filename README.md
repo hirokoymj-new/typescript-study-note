@@ -141,3 +141,57 @@ const handleChange = (
     setFormValues({ ...formValues, [name]: newVal });
   };
 ```
+
+## ReturnType<Type>
+
+- [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#returntypetype)
+- ReturnType constructs a type of the return type of the function Type:
+
+**Example 1**
+
+```js
+const getUser = () => ({
+  name: "John",
+  surname: "Doe",
+  age: 18,
+});
+
+// { name: string; surname: string; age: number; }
+type FunctionReturnType = ReturnType<typeof getUser>;
+```
+
+**Example 2**
+
+```js
+export type TCalculateDiff = ReturnType<typeof calculateDiff>;
+
+export const calculateDiff = (array: number[]) => {
+  const result = array.reduce(
+    (acc: number[], curr: number, i: number, src: number[]) => {
+      if (i !== 0) acc.push(curr - src[i - 1]);
+      return acc;
+    },
+    []
+  );
+  return result;
+};
+// How to use "TCalculateDiff"
+const ChartView = () => {
+  const chartData: TCalculateDiff = calculateDiff(values);
+};
+```
+
+**Example 3 (Redux)**
+
+```js
+const rootReducer = combineReducers({
+  form: formReducer,
+  counter: countReducer,
+  navigation: navigationReducer,
+  title: titleReducer,
+  theme: themeReducer,
+  categoryFilter: categoryFilterReducer,
+});
+
+export type RootState = ReturnType<typeof rootReducer>;
+```
