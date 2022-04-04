@@ -119,15 +119,39 @@ const [loading, setLoading] = useState<boolean>(false);
 const [age, setAge] = useState<number>(0);
 // Array
 const [statesList, setStatesList] = useState<string[]>([]);
+
+```
+
+## React - useState: Object
+
+**Set data from API**
+
+```js
+  const [data, setData] = useState<IInvoice>({} as IInvoice);
+```
+
+**Storing form errors**
+
+```js
+type FormErrors = Record<string, string>;
+const [errors, setErrors] = useState < FormErrors > {};
+```
+
+**Defining form values**
+
+```js
 // Object
 interface IFormValues {
   us_state: string;
   us_county: string;
 }
-const [formValues, setFormValues] = useState<IFormValue>({
-  us_state: "",
-  us_county: "",
-});
+const [formValues, setFormValues] =
+  useState <
+  IFormValue >
+  {
+    us_state: "",
+    us_county: "",
+  };
 ```
 
 ## React - handleChange
